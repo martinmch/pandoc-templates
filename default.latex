@@ -1,6 +1,5 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
-
 $if(fullpage)$
 \usepackage{fullpage}
 $endif$
@@ -159,6 +158,7 @@ $endfor$
 
 \widowpenalty=2000
 \clubpenalty=2000
+\def\tightlist{}
 \begin{document}
 $if(title)$
 \maketitle

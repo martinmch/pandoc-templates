@@ -1,0 +1,117 @@
+\documentclass[a4paper,11pt,hidelinks]{article}
+
+\usepackage[danish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\linespread{1.05}
+\usepackage{tgpagella}
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath}
+
+
+\usepackage[margin=1in,headheight=13.6pt]{geometry}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+
+\usepackage{amssymb,mathtools,cancel,amsthm}
+\usepackage{hyperref}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\usepackage{fancyvrb}
+\VerbatimFootnotes
+\usepackage{wrapfig}
+\usepackage[normalem]{ulem}
+\usepackage{listings}
+
+
+\usepackage{biblatex}
+\bibliography{/home/martinmch/documents/localArchive/offline/uni.bib}
+
+\definecolor{KU-red}{RGB}{144,26,30}
+\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
+
+
+% Graa eller groen
+
+\usepackage{datetime}
+\ddmmyydate
+\renewcommand{\dateseparator}{-}
+
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhf{}%
+  \fancyhead[C]{\includegraphics[width=3cm]{~/.pandoc/templates/img/ucph.pdf}}
+  \fancyfoot[C]{\footnotesize \thepage}%
+}
+\fancyhead[L]{\rightmark }
+\fancyhead[C]{Compiled: \today}
+\fancyhead[R]{Martin Christiansen}
+$if(authid)$
+\fancyhead[R]{$authid$}
+$endif$
+
+\pagestyle{fancy}
+
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\setlength{\emergencystretch}{3em}  % prevent overful lines
+\def\tightlist{}
+\setcounter{secnumdepth}{0}
+
+%\ifx\paragraph\undefined\else
+%\let\oldparagraph\paragraph
+%\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+%\fi
+%\ifx\subparagraph\undefined\else
+%\let\oldsubparagraph\subparagraph
+%\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+%\fi
+
+\usepackage{mdframed}
+\input{/home/martinmch/.pandoc/templates/misc/commonmath.tex}
+
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(author)$
+\author{$author$}
+$endif$
+$if(date)$
+\date{$date$}
+$endif$
+
+
+\begin{document}
+
+$if(title)$
+\maketitle
+$endif$
+\thispagestyle{plain}
+$for(include-before)$
+$include-before$
+$endfor$
+
+$if(abstract)$
+\begin{abstract}
+    $abstract$
+\end{abstract}
+$endif$
+
+\begin{flushleft}
+$body$
+\end{flushleft}
+
+
+\printbibliography
+
+$for(include-after)$
+$include-after$
+$endfor$
+\end{document}

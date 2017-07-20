@@ -1,0 +1,133 @@
+%% Template by Caleb McDaniel
+\documentclass[11pt,a4paper]{article}
+
+\def\myauthor{Martin Christiansen}
+\def\mytitle{Curriculum Vita}
+\def\mycopyright{\myauthor}
+\def\mykeywords{}
+\def\mybibliostyle{plain}
+\def\mybibliocommand{}
+\def\mysubtitle{}
+\def\myaffiliation{University of Copenhagen}
+\def\myaddress{Department of Computer Science}
+\def\myemail{martin@martinmch.com}
+\def\myweb{http://martinmch.com}
+\def\myphone{+45 93 85 87 77}
+\def\myfax{}
+\def\myversion{}
+\def\myrevision{}
+
+
+\def\myaffiliation{University of Copenhagen}
+\def\myauthor{Martin Christiansen}
+\def\mykeywords{Christiansen, Martin, Martin Christiansen, Computer Science,
+Computer, Science, Vita, CV}
+
+
+\usepackage{url,fancyhdr}
+\pagestyle{plain}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage[usenames,dvipsnames]{color}
+
+\usepackage[xetex, 
+	colorlinks=false,
+	urlcolor=Blue,
+	plainpages=false,
+  	pdfpagelabels,
+  	bookmarksnumbered,
+  	pdftitle={\mytitle},
+  	pagebackref,
+  	pdfauthor={\myauthor},
+  	pdfkeywords={\mykeywords}
+  	]{hyperref}
+
+\usepackage{marginnote}
+
+\usepackage[explicit]{titlesec}
+\titleformat{\subsection}[block]{\small}{}{0em}{\marginnote{\textsf{ #1}}}{}
+\titleformat{\subsubsection}[hang]{}{}{0em}{\smallskip\noindent\emph{ #1}}{}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+
+\begin{document}
+
+%\setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{Baskerville} 
+%\setsansfont[Mapping=tex-text,Colour=AA0000]{Optima Bold}
+\setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata} 
+\def\tightlist{}
+
+\newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Baskerville}\selectfont\&\,}}
+
+%% No bullets on labels
+\renewcommand{\labelitemi}{~} 
+
+%% Custom hanging indent for vita items
+\def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
+\def\labelitemi{~}
+\renewcommand{\labelitemii}{~}
+
+\thispagestyle{fancy}
+\fancyfoot{}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+%%% The next line will put the date revised in footer of first page
+\rfoot{\texttt{\scriptsize Current as of \today}} 
+\widowpenalty=2000
+\clubpenalty=2000
+
+%%%------------------------------------------------------------------------
+%%% Address and contact block
+%%%------------------------------------------------------------------------
+\begin{minipage}[t]{2.95in}
+    % \flushright {\footnotesize \href{http://martinmch.com}{} \\ {}  \\ {} \\
+    % \vspace{-0.05in} Copenhagen, Denmark }  
+  
+\end{minipage}
+\hfill     
+%\begin{minipage}[t]{0.0in}
+% dummy (needed here)
+%\end{minipage}
+\hfill
+\begin{minipage}[t]{1.7in}
+  \flushright \footnotesize Phone: \myphone \\ 
+  Fax: \myfax  \\ 
+  {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}}} \\
+  \vspace{-0.1em}{\scriptsize  \texttt{\href{\myweb}{\myweb}}} 
+\end{minipage}
+
+%% Name 
+\bigskip\bigskip
+\noindent{\huge{Martin Christiansen}}
+\reversemarginpar
+\bigskip\medskip  
+
+%% Positions
+\subsection{Positions}
+
+\subsubsection{Rice University}
+\ind Assistant Professor of History (2008-Present)
+\medskip
+\subsubsection{University of Denver}
+\ind Assistant Professor of History (2006-2008)
+
+\medskip
+
+%% Education
+\subsection{Education}
+
+\subsubsection{Johns Hopkins University}
+
+\ind Ph.D, History, 2006. Dissertation: \emph{Our Country is the World: Radical American Abolitionists Abroad}. %\vspace{-0.1in}  
+\medskip
+\subsubsection{Texas A\&M University}
+
+\ind B.A., History, 2000. \emph{Summa Cum Laude} 
+
+\ind M.A., Philosophy, 2001. Thesis: \emph{An Extraordinary Reversal: Hermeneutics and the Divide between the Sciences} %\vspace{0.01in}
+
+\medskip
+
+$body$
+
+\end{document}

@@ -158,6 +158,7 @@ $endif$
 % Turn off section headlines
 \setbeamertemplate{headline}
 
+\def\tightlist{}
 
 \begin{document}
 $if(title)$

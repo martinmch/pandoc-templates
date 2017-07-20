@@ -150,7 +150,7 @@ $if(abstract)$
 $abstract$
 \end{abstract}
 $endif$
-
+This is a test.
 $body$
  
 $if(natbib)$

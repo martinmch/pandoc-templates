@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{tikz,pgfplots}
+\usepackage{tikzsymbols}
+\usepackage{graphicx,grffile}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{kpfonts}
+\definecolor{KU-red}{RGB}{00,00,80}
+
+\begin{document}
+\begin{tikzpicture}
+    \node at (2.58,0.35)
+    {\includegraphics[width=0.3cm]{~/Templates/img/rudder.png}};
+    \node[opacity=0.8,KU-red] at (-0.01,0)
+    {\includegraphics[width=1cm]{~/Templates/img/globe.png}};
+    \node at (2.7,0) {{\Huge\color{KU-red}
+        \textsc{martinmch}}};
+    \node at (2.7,-0.5) {{\color{KU-red}
+        \textsc{-- and so it goes}}};
+
+\end{tikzpicture}
+
+\end{document}
