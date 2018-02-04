@@ -1,0 +1,24 @@
+
+\definecolor{KU-red}{RGB}{144,26,30}
+\mdfdefinestyle{leftrule}{%
+ skipabove=12,skipbelow=12pt,
+ innertopmargin=0.4em,%
+ innerbottommargin=0.4em,%
+ innerrightmargin=0.7em,%
+ rightmargin=0.7em,%
+ innerleftmargin=1.7em,%
+ leftmargin=0.7em,%
+ linecolor=KU-red,%
+ backgroundcolor=KU-red!15,%
+ linewidth=2pt,
+ topline=false,
+ bottomline=false,
+ rightline=false,
+ leftline=true
+}
+
+\mdtheorem[style=leftrule,backgroundcolor=yellow!15,linecolor=yellow!90]{definition}{Definition}
+\mdtheorem[style=leftrule]{example}{Example}
+\mdtheorem[style=leftrule]{exercise}{Exercise}
+\mdtheorem[style=leftrule,backgroundcolor=blue!15,linecolor=blue!90]{theorem}{Theorem}
+\mdtheorem[style=leftrule,backgroundcolor=gray!15,linecolor=gray!90]{proof}{Proof}

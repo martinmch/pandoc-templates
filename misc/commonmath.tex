@@ -1,25 +1,3 @@
-
-\definecolor{KU-red}{RGB}{144,26,30}
-\mdfdefinestyle{leftrule}{%
- skipabove=12,skipbelow=12pt,
- innertopmargin=0.4em,%
- innerbottommargin=0.4em,%
- innerrightmargin=0.7em,%
- rightmargin=0.7em,%
- innerleftmargin=1.7em,%
- leftmargin=0.7em,%
- linecolor=KU-red,%
- backgroundcolor=KU-red!15,%
- linewidth=2pt,
- topline=false,
- bottomline=false,
- rightline=false,
- leftline=true
-}
-
-
-\usepackage{xparse}
-
 \ExplSyntaxOn
 \NewDocumentCommand{\pair}{sO{}m}
 {
@@ -38,31 +16,24 @@
 }
 \ExplSyntaxOff
 
-
-\mdtheorem[style=leftrule,backgroundcolor=yellow!15,linecolor=yellow!90]{definition}{Definition}
-\mdtheorem[style=leftrule]{example}{Example}
-\mdtheorem[style=leftrule]{exercise}{Exercise}
-\mdtheorem[style=leftrule,backgroundcolor=blue!15,linecolor=blue!90]{theorem}{Theorem}
-\mdtheorem[style=leftrule,backgroundcolor=gray!15,linecolor=gray!90]{proof}{Proof}
-
-
 \renewcommand{\matrix}[1]{\mathbf{#1}} 
 \DeclareMathOperator\Span{span}
 \DeclareMathOperator\proj{proj}
 \DeclareMathOperator\col{col}
 \DeclareMathOperator\Null{null}
-\DeclareMathOperator\prik{\bullet}
+\DeclareMathOperator\vdot{\bullet}
+\renewcommand\vec{\mathbf}
 \newcommand{\into}{\rightarrow}
 \newcommand{\row}[1]{\mathbf{r}_{#1}} 
 \newcommand{\norm}[1]{||#1||} 
 \newcommand{\sfrac}[2]{^{#1}\!/\!_{#2}} 
 \newcommand{\wline}{\begin{center}\rule{\linewidth}{\linethickness}\end{center}}
 \newcommand{\set}[1]{\left\{ #1 \right\}}
-%\newcommand{\exp}[1]{\mathrm{e}^{#1}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\transpose}{\top}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\calP}{\mathcal{P}}
+\newcommand{\prob}{\mathcal{P}}
 \newcommand{\E}[1]{\cdot10^{#1}}
+

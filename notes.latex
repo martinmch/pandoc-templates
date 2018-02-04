@@ -74,6 +74,7 @@ $endif$
 %\fi
 
 \usepackage{mdframed}
+\input{/home/martinmch/.pandoc/templates/misc/mdframed.tex}
 \input{/home/martinmch/.pandoc/templates/misc/commonmath.tex}
 
 

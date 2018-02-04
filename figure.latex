@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{arrows.meta}
+\tikzset{>={Latex[width=3mm,length=3mm]}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+                \node[shape=circle,draw,inner sep=1.5pt] (char) {#1};}}
+\usepackage{mhchem,gensymb,amsmath}
+\usepackage{tgschola}
+\usepackage[T1]{fontenc}
+\begin{document}
+$body$
+\end{document}
