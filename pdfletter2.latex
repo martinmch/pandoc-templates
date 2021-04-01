@@ -1,0 +1,40 @@
+\documentclass[hidelinks,a5paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{parskip}
+
+\usepackage{tgschola}
+
+\usepackage[margin=1in,footskip=0pt]{geometry}
+
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{amssymb,mathtools,cancel,amsthm}
+\usepackage[
+    colorlinks=true,
+    urlcolor=MidnightBlue,
+    plainpages=false,
+    ]{hyperref}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+\renewcommand{\headrulewidth}{0pt}%
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[R]{$if(date)$ $date$ $else$ \today $endif$}%
+  \fancyfoot[L]{\textcolor{Gray}{\textsf {Martin Christiansen \\
+\textcolor{MidnightBlue}{Email} me@martinmch.com \\
+\textcolor{MidnightBlue}{Phone} 93 858 777 \\
+\textcolor{MidnightBlue}{https://martinmch.com}}}}
+}
+
+\def\tightlist{}
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+\thispagestyle{plain}
+\begin{flushleft}
+$body$
+\end{flushleft}
+\end{document}

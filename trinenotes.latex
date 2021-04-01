@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[margin=1.5in,showframe,left=1in]{geometry}
+\usepackage{tgschola}
+
+\def\tightlist{}
+
+%to lyn preamble from here
+\let\svsection\section
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\titleformat{\subsection}[leftmargin]
+{\normalfont
+\bfseries\filleft}
+{}{0pt}{}
+\titlespacing{\subsection}
+{0.5pc}{0pt}{0pc}
+%{0.5pc}{3pt}{6pc}
+
+\setcounter{secnumdepth}{0}
+
+\usepackage{graphicx,grffile}
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhf{}%
+  \fancyfoot[C]{\footnotesize \thepage}%
+}
+\fancyhead[L]{\rightmark }
+\fancyhead[C]{Compiled: \today}
+\fancyhead[R]{Martin Christiansen}
+
+\title{$title$}
+\author{$author$}
+\date{$date$}
+
+\begin{document}
+\maketitle
+\leftskip 0.5in
+
+$body$
+
+\end{document}

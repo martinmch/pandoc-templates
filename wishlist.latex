@@ -1,0 +1,71 @@
+\documentclass[hidelinks,a4paper,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo,tgschola,inconsolata}
+\usepackage[margin=1in,headheight=13.6pt]{geometry}
+
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{amssymb,mathtools,cancel,amsthm}
+\usepackage[
+    colorlinks=true,
+    urlcolor=MidnightBlue,
+    plainpages=false,
+    ]{hyperref}
+\usepackage{pgfornament}
+\usepackage{graphicx,grffile}
+\usepackage{fancyhdr}
+\usepackage{xparse}
+
+\fancypagestyle{plain}{%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhf{}%
+  \fancyhead[C]{\pgfornament{127}}
+  \fancyfoot[C]{\footnotesize \thepage}%
+}
+
+\usepackage{titlesec}
+
+\titleformat{\section}[block]{\color{MidnightBlue}\Large\bfseries\filcenter}{}{1em}{}
+\titleformat{\subsection}[block]{\color{MidnightBlue}\large\bfseries\filcenter}{}{1em}{}
+\titleformat{\subsubsection}[block]{\color{MidnightBlue}\large\bfseries\filcenter}{}{1em}{}
+
+\fancyhead[L]{Ønskeseddel}
+\fancyhead[C]{\today}
+\fancyhead[R]{Martin}
+
+\pagestyle{fancy}
+
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\usepackage{parskip}
+\setlength{\emergencystretch}{3em}  % prevent overful lines
+
+\def\tightlist{}
+\setcounter{secnumdepth}{0}
+
+$if(title)$
+\title{$title$}
+$endif$
+
+$if(date)$
+\date{$date$}
+$endif$
+
+\begin{document}
+  \begin{center}%
+  \LARGE $title$ \\ \vspace{0.3in}%
+  \Large Martin \\ \vspace{0.3in}%
+  \vspace{0.2in}%
+      \normalsize {\today}
+  \end{center}%
+\thispagestyle{plain}
+
+$body$
+
+\end{document}

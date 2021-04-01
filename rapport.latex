@@ -1,14 +1,11 @@
-% This Pandoc template was written by:
-% https://www.github.com/martinmch
-% For use at DIKU, UCPH.
+\documentclass[hidelinks,a4paper,11pt]{article}
 
-\documentclass[hidelinks,a4paper,11pt,$if(draft)$draft$endif$]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[american]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{mathpazo,tgschola,inconsolata}
 \usepackage[margin=1in,headheight=13.6pt]{geometry}
-\usepackage{ifdraft}
+
 \usepackage[usenames,dvipsnames,svgnames]{xcolor}
 \usepackage{amssymb,mathtools,cancel,amsthm}
 \usepackage[
@@ -18,23 +15,43 @@
     ]{hyperref}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
-\usepackage{verbatim}
-\usepackage{wrapfig}
-\usepackage{tikz}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-    \node[thick,shape=circle,draw,minimum size=2em, inner sep=2pt]
-    (char){#1};}}
-
-\usepackage{mdframed}
+\usepackage{framed}
 \usepackage{fancyhdr}
+\usepackage{xparse}
+
+$if(listings)$
+\usepackage{listings}
+\usepackage{textcomp}
+\lstset{literate={->}{$\rightarrow$}{2}{ε}{$\epsilon$}{1}}
+$endif$
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+\newenvironment{regex}
+{\begingroup\fixop{?}\fixop{+}}{\endgroup}
+\newenvironment{rxgroup}
+{(}{)}
+\newenvironment{charclass}
+{[}{]}
+
+\makeatletter
+\newcommand{\fixop}[1]{
+  \@tempcnta=\mathcode`#1
+  \divide\@tempcnta by "1000
+  \multiply\@tempcnta by "1000
+  \mathcode`#1=\numexpr\the\mathcode`#1-\@tempcnta\relax
+}
+\makeatother
 
 \fancypagestyle{plain}{%
   \renewcommand{\headrulewidth}{0pt}%
   \fancyhf{}%
-  \fancyhead[C]{\includegraphics[width=3cm]{~/Templates/img/ucph.pdf}}
+  \fancyhead[C]{\includegraphics[width=3cm]{~/.pandoc/templates/img/ucph.pdf}}
   \fancyfoot[C]{\footnotesize \thepage}%
 }
+
 \fancyhead[L]{$course$ \\ $title$}
 \fancyhead[C]{$date$ \\}
 \fancyhead[R]{$for(author)$ $author.id$ $sep$ og $endfor$ \\ $department$}
@@ -69,32 +86,18 @@ $endif$
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \usepackage{parskip}
 \setlength{\emergencystretch}{3em}  % prevent overful lines
-\input{/home/martinmch/Templates/misc/commonmath.tex}
-\input{/home/martinmch/Templates/misc/mdframed.tex}
 
 \def\tightlist{}
 \setcounter{secnumdepth}{0}
 
 $if(title)$ \title{$title$} $endif$
-$if(subtitle)$
-    \usepackage{titling}
-    \newcommand{\subtitle}[1]{%
-      \posttitle{%
-        \par\end{center}
-        \begin{center}\large#1\end{center}
-        \vskip0.5em}%
-    }
-    \subtitle{$subtitle$}
-$endif$
 $if(author)$ \author{$for(author)$ $author.name$ $sep$\\ \&\\ $endfor$} $endif$
 $if(date)$ \date{$date$} $endif$
 
 \begin{document}
-
 $if(title)$ \maketitle $endif$
 \thispagestyle{plain}
 
-$for(include-before)$ $include-before$ $endfor$
 $body$
-$for(include-after)$ $include-after$ $endfor$
+
 \end{document}

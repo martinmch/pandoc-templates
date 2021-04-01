@@ -23,7 +23,6 @@
 \usepackage[normalem]{ulem}
 \usepackage{listings}
 
-
 \usepackage{biblatex}
 \bibliography{/home/martinmch/documents/localArchive/offline/uni.bib}
 
@@ -53,6 +52,10 @@ $endif$
 
 \pagestyle{fancy}
 
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -61,17 +64,9 @@ $endif$
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 \setlength{\emergencystretch}{3em}  % prevent overful lines
-\def\tightlist{}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
-
-%\ifx\paragraph\undefined\else
-%\let\oldparagraph\paragraph
-%\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-%\fi
-%\ifx\subparagraph\undefined\else
-%\let\oldsubparagraph\subparagraph
-%\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-%\fi
 
 \usepackage{mdframed}
 \input{/home/martinmch/.pandoc/templates/misc/mdframed.tex}
